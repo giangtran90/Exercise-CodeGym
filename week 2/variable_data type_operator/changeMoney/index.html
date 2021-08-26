@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>change Money</title>
+    <script src="changeMoney.js"></script>
+</head>
+<body>
+    <form name="convertMoney">
+        <table cellspacing="30">
+            <tr>
+                <th>Amount</th>
+                <th>From Currency</th>
+                <th>To Currency</th>
+                <th></th>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" name="money" id="money" placeholder="input money"/>
+                </td>
+                <td>
+                    <select id="from">
+                        <option>VND</option>
+                        <option selected>USD</option>
+                    </select>
+                </td>
+                <td>
+                    <select id="to">
+                        <option>USD</option>
+                        <option selected>VND</option>
+                    </select>
+                </td>
+                <td>
+                    <button style="background-color: blue;color: white;" type="button" onclick="convMoney()">Convert</button>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4">
+                    <h3 id="k_q"></h3>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
