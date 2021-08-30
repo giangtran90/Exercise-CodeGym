@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise keyboard_Event</title>
+
+    <script src="keyboard.js"></script>
+
+    <style>
+        .size {
+                width: 80px;
+                height: 20px;
+              }
+    </style>
+
+</head>
+<body onload="docReady()"> 
+    <form>
+    <img id="imgDog" src="image\Daco_4047293.png" style="position: absolute;left: 0px;top: 0px;width: 100px;"/>
+    <br/><br/><br/><br/>
+    <strong>Press up, down, left, right to move Dog</strong><br/><br/>
+    <table>
+        <tr>
+            <td></td>
+            <!--Tao su kien cho nut up-->
+            <td>
+                <input class="size" type="button" value="UP"/>
+            </td>
+            <td></td>
+        </tr>
+        <!--Tạo sự kiện cho các nút right, down, left-->
+        <tr>
+            <td>
+                <input class="size" type="button" value="LEFT"/>
+            </td>
+            <td>
+                <input class="size" type="button" value="DOWN"/>
+            </td>
+            <td>
+                <input class="size" type="button" value="RIGHT"/>
+            </td>
+        </tr>
+    </table>
+    </form>
+</body>
+</html>

@@ -10,6 +10,8 @@ function inputYear()
         {
             if (year % 400 == 0)
             {
+                //document.write('is leap year')
+                //alert("is leap year")
                 document.getElementById("leapYear").innerHTML = year +  " is leap year";
             }
             else
