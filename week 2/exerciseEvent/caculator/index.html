@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+
+    <script src="caculator.js"></script>
+
+</head>
+<body>
+	<style> 
+        .but{
+            color:blue;
+            border-color:cornsilk ;
+            background:cyan;
+            width: 50px;
+            height: 30px;
+        }
+    </style>
+    <table style="border: 5px solid black;" width="300px">
+        <tr>
+            <td colspan="4">
+                <input type="text" id="number" width="100%" style="width: 93%; margin-left: 6px;" value="">
+            </td>
+            
+        </tr>
+        <tr>
+            <td align="center"><input class="but" type="button" id="so_1" onclick="number(1)" value="1"/></td>
+            <td align="center"><input class="but" type="button" id="so_2" onclick="number(2)" value="2"/></td>
+            <td align="center"><input class="but" type="button" id="so_3" onclick="number(3)" value="3"/></td>
+            <td align="center"><input class="but" type="button" id="dau_cong" onclick="number('+')" value="+"/></td>
+        </tr>
+        <tr>
+            <td align="center"><input class="but" type="button" id="so_4" onclick="number(4)" value="4"/></td>
+            <td align="center"><input class="but" type="button" id="so_5" onclick="number(5)" value="5"/></td>
+            <td align="center"><input class="but" type="button" id="so_6" onclick="number(6)" value="6"/></td>
+            <td align="center"><input class="but" type="button" id="dau_tru" onclick="number('-')" value="-"/></td>
+        </tr>
+        <tr>
+            <td align="center"><input class="but" type="button" id="so_7" onclick="number(7)" value="7"/></td>
+            <td align="center"><input class="but" type="button" id="so_8" onclick="number(8)" value="8"/></td>
+            <td align="center"><input class="but" type="button" id="so_9" onclick="number(9)" value="9"/></td>
+            <td align="center"><input class="but" type="button" id="dau_nhan" onclick="number('*')" value="x"/></td>
+        </tr>
+        <tr>
+            <td align="center"><input class="but" type="button" id="xoa" onclick="clean()" value="C"/></td>
+            <td align="center"><input class="but" type="button" id="so_0" onclick="number(0)" value="0"/></td>
+            <td align="center"><input class="but" type="button" id="dau_bang" onclick="tinh()" value="="/></td>
+            <td align="center"><input class="but" type="button" id="dau_chia" onclick="number('/')" value="-"/></td>
+        </tr>
+    </table>
+
+</body>
+</html>

@@ -2,7 +2,7 @@ function inputYear()
 {
     let year = parseInt(document.forms["checkYear"]["year"].value);
 
-    let leapYear = false;
+    let leapYear = true;
 
     if (year % 4 == 0)
     {
