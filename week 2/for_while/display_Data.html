@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hien thi bang du lieu</title>
+
+    <style>
+        td {
+            color:blue;
+            background-color: cornsilk;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+    </style>
+
+</head>
+<body>
+    <h1>javascript Loops</h1>
+    <h3 id="k_q"></h3>
+    <h3 id="k_q2"></h3>
+    <script>
+        
+        let display;
+        display = "<table border='3' width = '300' cellspacing = '2' cellpadding = '6'>";
+            for (let i = 1; i <= 10; i++)
+            {
+                display = display + "<tr>";
+                    for (let j = 1; j <= 10; j++)
+                    {
+                        display = display + "<td align = 'center' style>" + i*j + "</td>";
+                    }
+                display = display + "</tr>";
+            }
+        
+        display = display + "</table>";
+        
+        document.getElementById("k_q").innerHTML = "Display Table: <br/> <hr/>" + display + "<br/> <hr/>";
+        
+        let display1 = "<table border='3' width = '300' cellspacing = '2' cellpadding = '6'>";
+        let k = 1;
+        let l = 1;
+        while (k <= 10)
+        {
+            display1 = display1 + "<tr>";
+            while (l <= 10)
+            {
+                display1 = display1 + "<td>" + k*l + "</td>";
+                l++;
+            }
+            display1 = display1 + "</tr>";
+            l = 1;
+            k++;
+        }
+
+        display1 = display1 + "</table>";
+
+        document.getElementById("k_q2").innerHTML = "display table: for --> while <br/> <hr> " + display1;
+        
+    </script>
+    
+</body>
+</html>

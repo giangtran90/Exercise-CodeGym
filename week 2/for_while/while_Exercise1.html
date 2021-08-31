@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Hiện giá trị nhập và tính tổng (nếu giá trị nhập = -1 thì kết thúc)</h3><br/>
+    <h3 id="k_q"></h3>
+    <script>
+        let inputNumber = parseInt(prompt('Nhập số: '));
+        let total = 0;
+        while(inputNumber != -1)
+        {
+            alert("Giá trị vừa nhập là: " + inputNumber + " không phải là -1");
+            total = total + inputNumber;
+            alert("Tổng hiện tại là: " + total);
+            inputNumber = parseInt(prompt('Nhập tiếp số: '));
+        }
+        document.getElementById("k_q").innerHTML = "Total is: " + total;
+    </script>
+</body>
+</html>
