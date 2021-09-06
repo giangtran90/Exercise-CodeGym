@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bai_7</title>
+</head>
+<body>
+    <h3>Giải phương trình bậc 2: a*x^2+bx+c=0 (a#0)</h3>
+    Nhập giá trị: <br/>
+    <input type="text" id="input_a" placeholder="nhập giá trị a"/> <br/><br/>
+    <input type="text" id="input_b" placeholder="nhập giá trị b"/> <br/><br/>
+    <input type="text" id="input_c" placeholder="nhập giá trị c"/> <br/><br/>
+    Hiện thị nghiệm: <br/>
+    <textarea id="k_q" rows="3" cols="40"></textarea> <br/><br/>
+    <input type="button" onclick="check()" value="Kết quả"/><hr/>
+    <script>
+
+    function check()
+    {
+    let input_a = Number(document.getElementById("input_a").value); 
+    let input_b = Number(document.getElementById("input_b").value); 
+    let input_c = Number(document.getElementById("input_c").value);
+    let delta = (input_b * input_b) - 4 * input_a * input_c;
+
+    if (delta < 0)
+    {
+        document.getElementById("k_q").innerHTML = `phương trình vô nghiệm`;
+    }
+    else if (delta == 0)
+    {
+        let x = (-input_b)/(2 * input_a);
+        console.log(x);
+        document.getElementById("k_q").innerHTML = `phương trình có nghiệm: x1 = x2 = ${x}`; 
+    }
+    else
+    {
+        let x1 = ( (- input_b + Math.sqrt(delta)) / (2 * input_a));
+        let x2 = ( (- input_b - Math.sqrt(delta)) / (2 * input_a));
+        document.getElementById("k_q").innerHTML = `phương trình có 2 nghiệm: x1 = ${x1}  x2 = ${x2}`;
+    }
+        
+    }
+        
+    </script>
+</body>
+</html>

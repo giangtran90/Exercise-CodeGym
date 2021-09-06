@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bai_2</title>
+</head>
+<body>
+    <h3>Chuyển đổi đơn vị mét sang feet</h3>
+    Nhập mét: <br/>
+    <input type="text" id="met"/> <br/><br/>
+    Hiện thị Feet: <br/>
+    <textarea id="feet"></textarea> <br/><br/>
+    <input type="button" onclick="check()" value="Kết quả"/><hr/>
+    <script>
+
+    function check()
+    {
+    let input_met ; 
+    input_met = Number(document.getElementById("met").value); 
+    let feet;
+    feet = input_met * 3.2808;
+    document.getElementById("feet").innerHTML = feet;
+        
+    }
+        
+    </script>
+</body>
+</html>

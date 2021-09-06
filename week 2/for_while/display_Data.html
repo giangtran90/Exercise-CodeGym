@@ -19,8 +19,9 @@
     <h1>javascript Loops</h1>
     <h3 id="k_q"></h3>
     <h3 id="k_q2"></h3>
+
     <script>
-        
+        // Ve bang voi vong lap for
         let display;
         display = "<table border='3' width = '300' cellspacing = '2' cellpadding = '6'>";
             for (let i = 1; i <= 10; i++)
@@ -28,7 +29,7 @@
                 display = display + "<tr>";
                     for (let j = 1; j <= 10; j++)
                     {
-                        display = display + "<td align = 'center' style>" + i*j + "</td>";
+                        display = display + "<td align = 'center'>" + i*j + "</td>";
                     }
                 display = display + "</tr>";
             }
@@ -36,7 +37,9 @@
         display = display + "</table>";
         
         document.getElementById("k_q").innerHTML = "Display Table: <br/> <hr/>" + display + "<br/> <hr/>";
-        
+
+
+        // Ve bang voi vong lap while
         let display1 = "<table border='3' width = '300' cellspacing = '2' cellpadding = '6'>";
         let k = 1;
         let l = 1;
@@ -45,7 +48,7 @@
             display1 = display1 + "<tr>";
             while (l <= 10)
             {
-                display1 = display1 + "<td>" + k*l + "</td>";
+                display1 = display1 + "<td  align = 'center'>" + k*l + "</td>";
                 l++;
             }
             display1 = display1 + "</tr>";

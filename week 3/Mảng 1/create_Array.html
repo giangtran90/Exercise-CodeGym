@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tạo và thao tác với mảng</title>
+</head>
+<body>
+    <h3>Display Screen</h3>
+    <input type="text" id="input_text"/>
+    <input type="button" id="add_Arr" value="Add_Element" onclick="add_Element()"/>
+    <input type="button" id="dis_Arr" value="Display" onclick="dis_Arr()"/>
+    <hr width="350" align="left"/>
+    <textarea id="result" rows="8" cols="46"></textarea>
+
+    <script>
+        let x = 0;
+        let arr = [];
+        function add_Element()
+        {
+            arr[x] = document.getElementById("input_text").value;console.log(arr[x]);
+            document.getElementById("result").innerHTML = `phần tử ${arr[x]} đã nhập vào giá trị ${x}`;
+            x++;
+            document.getElementById("input_text").value = "";
+        }
+
+        function dis_Arr()
+        {
+            let element = "";
+            for (let i = 0; i < arr.length; i++)
+            {
+                element = element + "element " + i + " = " + arr[i] + "   "; 
+            }
+            document.getElementById("result").innerHTML = element;
+        }
+
+    </script>
+</body>
+</html>

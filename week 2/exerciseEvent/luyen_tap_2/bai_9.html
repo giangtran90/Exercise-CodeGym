@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bai_9</title>
+</head>
+<body>
+    <h3>Kiểm tra tam giác</h3>
+    Nhập cạnh: <br/>
+    <input type="text" id="canh_1" placeholder="canh 1"/> <br/><br/>
+    <input type="text" id="canh_2" placeholder="cạnh 2"/> <br/><br/>
+    <input type="text" id="canh_3" placeholder="cạnh 3"/> <br/><br/>
+    Hiện thị diện tích: <br/>
+    <textarea id="k_q" rows="3" cols="40"></textarea> <br/><br/>
+    <input type="button" onclick="check()" value="Kết quả"/><hr/>
+    <script>
+
+    function check()
+    {
+    let input_a = Number(document.getElementById("canh_1").value); 
+    let input_b = Number(document.getElementById("canh_2").value); 
+    let input_c = Number(document.getElementById("canh_3").value); 
+    
+    if (input_a > 0 && input_b > 0 && input_c > 0)
+    {
+        if ((input_a + input_b) > input_c)
+        {
+            if ((input_c + input_b) > input_a)
+            {
+                if ((input_a + input_c) > input_b)
+                {
+                    document.getElementById("k_q").innerHTML = `a = ${input_a} b = ${input_b} c = ${input_c} là 3 cạnh của tam giác`;
+                }
+                else
+                {
+                    document.getElementById("k_q").innerHTML = `số nhập vào không phải 3 cạnh của tam giác`; 
+                }
+            }
+            else
+            {
+                document.getElementById("k_q").innerHTML = `số nhập vào không phải 3 cạnh của tam giác`;  
+            }
+        }
+        else
+        {
+            document.getElementById("k_q").innerHTML = `số nhập vào không phải 3 cạnh của tam giác`;
+        }
+
+    }
+    else
+    {
+        document.getElementById("k_q").innerHTML = `số nhập vào không phải 3 cạnh của tam giác`;
+    }
+        
+    }
+        
+    </script>
+</body>
+</html>

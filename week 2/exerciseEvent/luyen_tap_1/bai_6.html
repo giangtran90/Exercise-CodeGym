@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tinh tien hoa hong</title>
+</head>
+<body>
+    <h3>Tien hoa hong nhan duoc:</h3>
+    
+    <form>
+        Nhan vien:<br/>
+        <input type="text" id="name"/> <br/>
+        Doanh thu:<br/>
+        <input type="text" id="inputMoney" placeholder="nhap tien"/><br/><br/>
+        <input type="button" onclick="check()" value="kiem tra hoa hong duoc nhan"/><hr/>
+        <h3 id="k_q"></h3>
+    </form>
+    <script>
+    function check(){
+        let name = document.getElementById("name").value;
+        console.log(name);
+        let money = parseInt(document.getElementById("inputMoney").value);
+        if (money >= 20000000)
+        {
+            money = money * 15 / 100 ;
+            document.getElementById("k_q").innerHTML = `Tien hoa hong anh/chi "${name}" nhan duoc la ${money} VND`
+        }
+        else if (money >= 10000000)
+        {
+            money = money * 10 / 100;
+            document.getElementById("k_q").innerHTML = `Tien hoa hong anh/chi "${name}" nhan duoc la ${money} VND`
+        }
+        else
+        {
+            money = money * 5 / 100;
+            document.getElementById("k_q").innerHTML = `Tien hoa hong anh/chi "${name}" nhan duoc la ${money} VND`  
+        }
+     }
+    </script>
+</body>
+</html>

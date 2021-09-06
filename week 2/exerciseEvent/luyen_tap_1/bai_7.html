@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tinh cuoc dien thoai</title>
+</head>
+<body>
+    <h3>TÍNH CƯỚC ĐIỆN THOẠI</h3>
+    <form>
+        Nhập tên khách hàng:<br/>
+        <input type="text" id="name"/><br/>
+        Nhập sô phút gọi:<br/>
+        <input type="text" id="number"/><br/><br/>
+        <input type="button" onclick="checkMoney()" value="Kiểm tra"/><hr/>
+        <h3 id="k_q"></h3>
+    </form>
+    <script>
+        function checkMoney()
+        {
+            let ten = document.getElementById("name").value;
+            let phut = document.getElementById("number").value;
+            let i = 1500; 
+            let j = 1000;
+            let k = 700;
+            let money;
+
+            if (phut <= 120)
+            {
+                money = phut * i ;
+                
+            }
+            else if (phut <= 1000)
+            {
+                money = phut * j;
+            }
+            else
+            {
+                money = phut * k;
+            }
+
+            document.getElementById("k_q").innerHTML = `Cước điện thoại của quý khách "${ten}" là ${money} `;
+
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bai 5</title>
+</head>
+<body>
+    <h3>Xep hang hoc luc</h3>
+    <h3 id="k_q"></h3>
+    <script>
+    let name = prompt("Nhao ten hoc sinh: ");
+    let score = prompt("Nhap diem: ");
+    if (score >= 8.0)
+    {
+        document.getElementById("k_q").innerHTML= "Hoc sinh " + name + " co hoc luc gioi";
+    }
+    else
+    {
+        if (score >= 7.0)
+        {
+            document.getElementById("k_q").innerHTML= "Hoc sinh " + name + " co hoc luc kha";
+        }
+        else
+        {
+            if (score >= 5.0)
+            {
+                document.getElementById("k_q").innerHTML= "Hoc sinh " + name + " co hoc luc trung binh";
+            }
+            else
+            {
+                document.getElementById("k_q").innerHTML= "Hoc sinh " + name + " co hoc luc yeu";
+            }
+        }
+    }
+    </script>
+</body>
+</html>

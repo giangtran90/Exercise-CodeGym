@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bai_4</title>
+</head>
+<body>
+    <h3>Tính diện tích và chu vi hình chữ nhật</h3>
+    Nhập cạnh: <br/>
+    <input type="text" id="dai" placeholder="chiều dài"/> <br/><br/>
+    <input type="text" id="rong" placeholder="chiều rộng"/> <br/><br/>
+    Hiện thị diện tích: <br/>
+    <textarea id="chuvi_dientich" rows="3" cols="40"></textarea> <br/><br/>
+    <input type="button" onclick="check()" value="Kết quả"/><hr/>
+    <script>
+
+    function check()
+    {
+    let input_a = Number(document.getElementById("dai").value); 
+    let input_b = Number(document.getElementById("rong").value); 
+    let chuvi_HCN = (input_a + input_b) * 2;
+    let dientich_HCN = input_a * input_b;
+    document.getElementById("chuvi_dientich").innerHTML = `P = ( ${input_a} + ${input_b} ) * 2 = ${chuvi_HCN} 
+                                                           S = ${input_a} * ${input_b} = ${dientich_HCN}`;
+        
+    }
+        
+    </script>
+</body>
+</html>

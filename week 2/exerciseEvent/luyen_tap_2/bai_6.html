@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bai_6</title>
+</head>
+<body>
+    <h3>Giải phương trình bậc 1: a*x + b = 0</h3>
+    Nhập giá trị: <br/>
+    <input type="text" id="input_a" placeholder="nhập giá trị a"/> <br/><br/>
+    <input type="text" id="input_b" placeholder="nhập giá trị b"/> <br/><br/>
+    Hiện thị nghiệm: <br/>
+    <textarea id="k_q" rows="3" cols="40"></textarea> <br/><br/>
+    <input type="button" onclick="check()" value="Kết quả"/><hr/>
+    <script>
+
+    function check()
+    {
+    let input_a = Number(document.getElementById("input_a").value); 
+    let input_b = Number(document.getElementById("input_b").value); 
+    let ket_qua = (- input_b) / input_a;
+    document.getElementById("k_q").innerHTML = `x = ${ket_qua}`;
+        
+    }
+        
+    </script>
+</body>
+</html>

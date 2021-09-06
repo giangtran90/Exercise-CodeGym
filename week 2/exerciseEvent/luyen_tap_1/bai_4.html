@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bai 4</title>
+</head>
+<body>
+    <h3>Tim gia tri lon nhat cua 3 so</h3>
+    <h3 id="k_q"></h3>
+    <script>
+       let a = prompt("Nhap a: ");
+       let b = prompt("Nhap b: ");
+       let c = prompt("Nhap c: ");
+
+       if (a > b)
+       {
+           if (b > c)
+           {
+                document.getElementById("k_q").innerHTML= a + " la so lon nhat";
+           }
+           else 
+           {
+               if (a > c)
+               {
+                    document.getElementById("k_q").innerHTML= a + " la so lon nhat";
+               }
+               else
+                    document.getElementById("k_q").innerHTML= c + " la so lon nhat";
+           }
+       }
+       else
+       {
+           if (a > c)
+           {
+                document.getElementById("k_q").innerHTML= b + " la so lon nhat";
+           }
+           else 
+           {
+                if (b > c)
+                {
+                    document.getElementById("k_q").innerHTML= b + " la so lon nhat";
+                }
+                else
+                {
+                    document.getElementById("k_q").innerHTML= c + " la so lon nhat";
+                }
+           }
+       }
+    </script>
+</body>
+</html>

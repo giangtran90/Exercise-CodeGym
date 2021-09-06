@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bai_5</title>
+</head>
+<body>
+    <h3>Tính diện tích và chu vi tam giác vuông</h3>
+    Nhập cạnh: <br/>
+    <input type="text" id="canh_GV_1" placeholder="canh góc vuông 1"/> <br/><br/>
+    <input type="text" id="canh_GV_2" placeholder="cạnh góc vuông 2"/> <br/><br/>
+    <input type="text" id="canh_huyen" placeholder="cạnh huyền"/> <br/><br/>
+    Hiện thị diện tích: <br/>
+    <textarea id="chuvi_dientich" rows="3" cols="40"></textarea> <br/><br/>
+    <input type="button" onclick="check()" value="Kết quả"/><hr/>
+    <script>
+
+    function check()
+    {
+    let input_a = Number(document.getElementById("canh_GV_1").value); 
+    let input_b = Number(document.getElementById("canh_GV_2").value); 
+    let input_c = Number(document.getElementById("canh_huyen").value); 
+    let chuvi_TG = input_a + input_b + input_c;
+    let dientich_TG = (input_a * input_b) / 2;
+    document.getElementById("chuvi_dientich").innerHTML = `P = ${input_a} + ${input_b} + ${input_c} =  ${chuvi_TG} 
+                                                           S = (${input_a} * ${input_b}) / 2 = ${dientich_TG}`;
+        
+    }
+        
+    </script>
+</body>
+</html>

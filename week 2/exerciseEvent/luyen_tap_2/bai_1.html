@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bai_1</title>
+</head>
+<body>
+    <h3>Chuyển đổi độ C sang độ F</h3>
+    Nhập độ C: <br/>
+    <input type="text" id="do_C"/> <br/><br/>
+    Hiện thị độ F: <br/>
+    <textarea id="do_F"></textarea> <br/><br/>
+    <input type="button" onclick="check()" value="Kết quả"/><hr/>
+    <script>
+
+        function check()
+        {
+            let input_C ; 
+            do
+        {
+            input_C = Number(document.getElementById("do_C").value);
+            if (!isNaN(input_C))
+                {
+                    break;
+                }
+            else
+            {
+                //clear()
+                document.write(`You need to input a number! Input F5 and Please try again!`);
+            }
+        } while (isNaN(input_C))
+        
+            let do_F;
+            do_F = input_C * 9 / 5 +32;
+            console.log(do_F);
+            document.getElementById("do_F").innerHTML = do_F;
+        
+        }
+        
+    </script>
+</body>
+</html>

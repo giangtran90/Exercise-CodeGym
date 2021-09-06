@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bai_8</title>
+</head>
+<body>
+    <h3>Nhập giá trị kiểm tra tuổi</h3>
+    Nhập giá trị: <br/>
+    <input type="text" id="input_name" placeholder="nhập tên"/> <br/><br/>
+    <input type="text" id="input_age" placeholder="nhập tuổi"/> <br/><br/>
+    Hiện thị : <br/>
+    <textarea id="k_q" rows="3" cols="40"></textarea> <br/><br/>
+    <input type="button" onclick="check()" value="Kết quả"/><hr/>
+    <script>
+
+    function check()
+    {
+        let name = document.getElementById("input_name").value;
+        let age = parseInt(document.getElementById("input_age").value);
+
+        if (age < 0 || age > 120)
+        {
+            document.getElementById("k_q").innerHTML = `số nhập vào ${age} không phải là tuổi của ${name}`; 
+        }
+        else
+        {
+            document.getElementById("k_q").innerHTML = `số nhập vào ${age} là tuổi của ${name}`; 
+        }
+        
+    }
+        
+    </script>
+</body>
+</html>
