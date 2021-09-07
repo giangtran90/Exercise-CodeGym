@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Từ điển đơn giản</title>
+</head>
+<body>
+<h3>Từ điển Anh - Việt</h3>
+<input type="text" id="text"/>
+<input type="button" onclick="tra_cuu()" value="Tra cứu"/>
+<input type="button" onclick="add_Eng()" value="ADD_ENG"/>
+<input type="button" onclick="add_VN()" value="ADD_VN"/> <br/><br/>
+<textarea id="k_q"></textarea>
+
+<script>
+let Eng = ["hello","name","bye"];
+let VN = ["xin chào","tên","tạm biệt"];
+function tra_cuu()
+{
+let input_Text = document.getElementById("text").value;
+let key = Eng.indexOf(input_Text);
+if (key < 0)
+{
+    document.getElementById("k_q").innerHTML = `Không tìm thấy`;
+}
+else
+{
+    let find = VN[key];
+    document.getElementById("k_q").innerHTML = find;
+}
+} 
+
+function add_Eng()
+{
+    let input_Text = document.getElementById("text").value;
+    let add = Eng.push(input_Text);
+    console.log(Eng);
+}
+
+function add_VN()
+{
+    let input_Text = document.getElementById("text").value;
+    let add1 = VN.push(input_Text);
+    console.log(VN);
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sử dụng hàm có sẵn</title>
+</head>
+<body>
+    <strong>Exercise 1: </strong><br/>
+    <strong id="kq_1"></strong>
+    <strong id="kq_2"></strong>
+    <strong id="kq_3"></strong>
+    <script>
+        let myColor = ["Red", "Green", "White", "Black"];
+        document.getElementById("kq_1").innerHTML = `${myColor.toString()} <br/>`
+        document.getElementById("kq_2").innerHTML = `${myColor.join()} <br/>`
+        document.getElementById("kq_3").innerHTML = `${myColor.join('+')} <hr/>`
+    </script>
+</body>
+</html>

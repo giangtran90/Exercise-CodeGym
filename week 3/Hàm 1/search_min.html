@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tìm giá trị nhỏ nhất trong mảng</title>
+</head>
+<body>
+    <form>
+        <h3>Tìm giá trị nhỏ nhất trong mảng nhập vào</h3>
+        <h4>Nhập giá trị của mảng:</h4>
+        <input type="text" id="input_number" placeholder="nhập giá trị của mảng"/>
+        <input type="button" onclick="checkMin(a)" value="RESULT"/>
+        <input type="button" onclick="inputArray()" value="ADD_ARRAY"/>
+        <input type="button" onclick="clear_array()" value="CLEAR_ARRAY"/>
+        <hr width="455" align="left"/>
+        <textarea id="result" cols="60"></textarea>
+    </form>
+
+    <script>
+        let a = [];
+        function inputArray()
+        {
+            let number = document.getElementById("input_number").value;
+            let add = a.push(number);
+            console.log(a);
+            document.getElementById("result").innerHTML = `Bạn đã nhập ${number}. Giá trị hiện tại của mảng là ${a}`;
+        }
+
+        function checkMin(a)
+        {
+            if (a.length-1 == 0) 
+            {
+                return false;
+            }
+            min = parseInt(a[0]);
+            for (let i = 1; i < a.length; i++)
+            {
+                if (parseInt(a[i]) < min)
+                {
+                    min = a[i];
+                }
+            }
+
+            document.getElementById("result").innerHTML = `Giá trị nhỏ nhất của mảng nhập vào [${a}] là: ${min}`;
+        }
+
+        function clear_array()
+        {
+            document.getElementById("input_number").value = "";
+            document.getElementById("result").value = "";
+        }
+    </script>
+</body>
+</html>

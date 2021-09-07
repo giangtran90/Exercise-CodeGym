@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chuyển chữ thường thành chữ hoa và ngược lại</title>
+</head>
+<body>
+<input type="text" id="input_Text"/>
+<input type="button" onclick="change()" value="change"/> <br/>
+Chữ nhập vào: <br/>
+<h4 id="k_q"></h4>
+Chuyển chữ thường thành chữ hoa: <br/>
+<h4 id="k_q_1"></h4>
+Chuyển chữ hoa thành chữ thường: <br/>
+<h4 id="k_q_2"></h4>
+Chuyển qua lại giữa chữ thường và hoa hoa và thường: <br/>
+<h4 id="k_q_3"></h4>
+<script>
+    
+    function change()
+    {
+        let Str = document.getElementById("input_Text").value;
+        document.getElementById("k_q").innerHTML = Str;
+        thuong_Hoa(Str);
+        hoa_thuong(Str)
+        qua_lai(Str)
+    }
+    
+    function thuong_Hoa(Str)
+    {
+        let content = Str.toUpperCase();
+        document.getElementById("k_q_1").innerHTML = content;
+    }
+
+    function hoa_thuong(Str)
+    {
+        let content1 = Str.toLowerCase();
+        document.getElementById("k_q_2").innerHTML = content1;
+    }
+
+    function qua_lai(Str)
+    {
+        let UPPER = "ABCDEFGHIJKLMNOPQRSTUVWSYZ";
+        let LOWER = "abcdefghijklmnopqrstuvwsyz";
+        let k_q =[];
+        for (let i = 0 ; i < Str.length ; i++)
+        {
+            if (UPPER.indexOf(Str[i]) !== -1)
+            {
+                k_q.push(Str[i].toLowerCase())
+            }
+            else if (LOWER.indexOf(Str[i]) !== -1)
+            {
+                k_q.push(Str[i].toUpperCase())
+            }
+            else
+            {
+                k_q.push(Str[i])
+            }
+        }
+        document.getElementById("k_q_3").innerHTML = k_q.join("");
+
+    }
+
+</script>
+</body>
+</html>
