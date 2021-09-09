@@ -20,9 +20,10 @@
 
     <script>
         let arr = ["a","A","B","B","A","a","B"]
-        let count = 0;
+        let count;
         function check_location()
         {
+        count = 0;
         let input = document.getElementById("string").value;
         let key = arr.indexOf(input);
         if (key < 0)

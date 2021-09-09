@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hiển thị 20 SNT đầu tiên</title>
+</head>
+<body>
+    <script>
+        function check_SNT(n)
+        {
+            let k_q = true;
+            if (n < 2)
+            {
+                k_q = false;
+            }
+            else
+            {
+                if (n == 2)
+                {
+                    k_q = true;
+                }
+                else
+                {
+                    for (let i = 2; i < n; i++)
+                    {
+                        if(n % i == 0)
+                        {
+                            k_q = false;
+                            break;
+                        }
+                    }
+                }
+            }
+            return k_q;
+        }
+
+        function print_SNT()
+        {
+            let count = 1;
+            let n = 1;
+            let a = []
+            while (count < 21)
+            {
+                let flag = check_SNT(n);
+                if (flag == true) 
+                {
+                  a.push(n);
+                  count++;  
+                }
+                n++;
+            }
+            document.write(`20 mươi số nguyên tố đầu tiên là: ${a}`);
+        }
+
+        print_SNT();
+    </script>
+</body>
+</html>
