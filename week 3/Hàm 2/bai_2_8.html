@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tìm giá trị nhỏ nhất</title>
+</head>
+<body>
+    <form>
+		<h3>Mảng đảo ngược</h3>
+		<strong>Nhập số:</strong><br/><br/>
+		<input type="text" id="number"/>
+		<input type="button" onclick="check_Min()" value="Result"/>
+        <input type="button" onclick="add_number()" value="Add"/>
+		<input type="button" onclick="clear_all()" value="Clear"/>
+		<hr width="270" align = "left"/>
+		<textarea id="result" cols="35"></textarea>
+	</form>
+
+    <script>
+        let a = [];
+        function check_Min()
+        {
+            a.reverse()
+            console.log(a);
+            document.getElementById("result").innerHTML = `Mảng sau khi đảo ngược là ${a}`;
+            console.log(document.getElementById("result"));
+            
+        }
+
+        function add_number()
+        {
+            let input = parseInt(document.getElementById("number").value);
+            let add = a.push(input);
+            // console.log(a);
+            document.getElementById("result").innerHTML = `bạn đã nhập giá trị ${input} mảng a = [${a.join()}] `
+        }
+
+        function clear_all()
+        {
+            document.getElementById("number").value = "";
+            document.getElementById("result").innerHTML = "";
+        }
+        
+    </script>
+</body>
+</html>

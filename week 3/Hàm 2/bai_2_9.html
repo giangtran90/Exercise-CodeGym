@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+		<h3>Tìm vị trí kí tự trong mảng và in số lần xuất hiện</h3>
+		<strong>Nhập kí tự:</strong><br/><br/>
+		<input type="text" id="string"/>
+		<input type="button" onclick="check_location()" value="Result"/>
+        <input type="button" onclick="add_number()" value="Add"/>
+		<input type="button" onclick="clear_all()" value="Clear"/>
+		<hr width="270" align = "left"/>
+		<textarea id="result" cols="35"></textarea>
+	</form>
+
+    <script>
+        let arr = ["a","A","B","B","A","a","B"]
+        let count = 0;
+        function check_location()
+        {
+        let input = document.getElementById("string").value;
+        let key = arr.indexOf(input);
+        if (key < 0)
+        {
+            document.getElementById("result").innerHTML = `kí tự ${input} nhập vào không có trong mảng ${arr}`;
+        }
+        else
+        {
+            for (let i = 0; i < arr.length; i++)
+            {
+                if (input == arr[i])
+                {
+                    count++;     
+                }
+                console.log(count);
+
+            }
+            document.getElementById("result").innerHTML = `kí tự ${input} nhập vào có trong mảng ${arr} và xuất hiện ${count} lần`
+        }
+        }
+        function clear_all()
+        {
+            document.getElementById("string").value = "";
+            document.getElementById("result").innerHTML = "";
+        }
+    </script>
+</body>
+</html>

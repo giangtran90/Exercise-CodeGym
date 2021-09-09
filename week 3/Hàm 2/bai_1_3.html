@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luyện tập tham số</title>
+</head>
+<body>
+    <script>
+    let a = parseInt(prompt("Nhập a: ")); 
+    let b = parseInt(prompt("Nhập b: "));
+    let sum;
+    function check_number(a,b)
+    {
+        if (a > b)
+        {
+            return 1;
+        }
+        else
+        {
+            return sum = a + b;
+        }
+        
+    }
+
+    let flag = check_number(a,b);
+    if (flag == 1)
+    {
+        alert(`số ${a} lớn hơn số ${b}`);
+    }
+    else 
+    {
+        alert(`tổng 2 số là ${sum}`);
+    }
+
+
+    </script>
+    
+</body>
+</html>

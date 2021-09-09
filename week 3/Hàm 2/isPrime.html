@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiểm tra số nguyên tố</title>
+</head>
+<body>
+    <h3>Nhập số:</h3>
+    <input type="text" id="number"/>
+    <input type="button" onclick="check_prime()" value="CHECK"/>
+    <br/><br/>
+    <textarea id="result" cols="30"></textarea>
+
+    <script>
+        function check_prime()
+        {
+            let input_number =parseInt(document.getElementById("number").value);
+            let check = true;
+            if (input_number < 2)
+            {
+                check = false;
+            }
+            else
+            {
+                if (input_number == 2)
+                {
+                    check = true;
+                }
+                else
+                {
+                    for (i = 2; i < input_number; i++)
+                    {
+                        if(input_number % i == 0)
+                        {
+                            check = false;
+                            break;
+                        }
+                    }
+                }
+            }
+
+            if (check == true)
+            {
+                document.getElementById("result").innerHTML = `${input_number} là số nguyên tố`
+            }
+            else
+            {
+                document.getElementById("result").innerHTML = `${input_number} không phải là số nguyên tố`
+            }
+        }
+    </script>
+    
+</body>
+</html>

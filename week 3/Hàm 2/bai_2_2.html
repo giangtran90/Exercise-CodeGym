@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính diện tích và chu vi hình tròn</title>
+</head>
+<body>
+    <form>
+        <h3>Tính chu vi và diện tích hình tròn</h3>
+        <strong>Nhập bán kính:</strong><br/>
+        <input type="text" id="ban_kinh"/><br/><br/>
+        <input type="button" onclick="check_result()" value="Result"/>
+        <input type="reset" value="Clear"/><br/><br/>
+        <textarea id="result" rows="3" cols="35"></textarea>
+    </form>
+    <script>
+        let S;
+        let P;
+        function check_result()
+        {
+        let input_number = Number(document.getElementById("ban_kinh").value);
+
+        function dien_tich(input_number)
+        {
+            return S = input_number * input_number * Math.PI;
+        }
+
+        function chu_vi(input_number)
+        {
+            return S = 2 * input_number * Math.PI;
+        }
+
+        let flag_1 = dien_tich(input_number);
+        let flag_2 = chu_vi(input_number);
+
+        document.getElementById("result").innerHTML = `diện tích là: S = ${flag_1}
+                                                       chu vi là: P = ${flag_2}`;
+
+        }
+    </script>
+</body>
+</html>

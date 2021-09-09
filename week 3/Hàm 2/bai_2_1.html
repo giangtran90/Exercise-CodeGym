@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bình phương 1 số</title>
+</head>
+<body>
+    <form>
+    <h3>Tính bình phương của một số:</h3>
+    <input type="number" id="number" onchange="check_Square(this.value)"/>
+    <input type="button" onclick="check_Square()" value="CHECK"/>
+    <input type="reset" value="CLEAR"/>
+    <br/><br/>
+    <textarea id="result" rows="4" cols="38"></textarea>
+    </form>
+
+    <script>
+        function check_Square()
+        {
+            let input_number = parseInt(document.getElementById("number").value)
+            let square = input_number * input_number;
+            document.getElementById("result").innerHTML = `Bình phương của ${input_number} là: ${square}`;
+        }
+
+    </script>
+</body>
+</html>

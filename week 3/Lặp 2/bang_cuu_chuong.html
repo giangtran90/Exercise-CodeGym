@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>in bảng cửu chương</title>
+</head>
+<body>
+    <script>
+        let ve_bang;
+        ve_bang = "<table border='1' cellspacing = '3'>"
+        for (let i = 1; i < 10; i++)
+        {
+            ve_bang += "<tr>";
+            for (let j = 2; j < 10; j++)
+            {
+                ve_bang += "<td>" + j + "*" + i + "=" + i*j + "<td/>"
+            }
+            ve_bang += "<tr/>"
+        }
+        ve_bang += "<table/>";
+
+        document.write(ve_bang);
+
+        // let bang_cuu_chuong = [];
+        // for (let i = 0 ; i < 9; i++)
+        // {
+        //     bang_cuu_chuong[i] = [];
+        //     for (let j = 0; j < 8; j++)
+        //     {
+        //         bang_cuu_chuong[i][j] = (i + 1) * (j + 2);
+        //     }
+        // }
+        // console.log(bang_cuu_chuong);
+        
+    </script>
+</body>
+</html>

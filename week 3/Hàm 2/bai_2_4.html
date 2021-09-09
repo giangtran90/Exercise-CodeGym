@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiểm tra giá trị nhập vào có phải là số hay không</title>
+</head>
+<body>
+    <form>
+		<h3>Kiểm tra giá trị nhập vào có phải là số hay không</h3>
+		<strong>Nhập bất kì:</strong><br/><br/>
+		<input type="text" id="input"/>
+		<input type="button" onclick="check_input()" value="Result"/>
+		<input type="reset" value="Clear"/>
+		<hr width="270" align = "left"/>
+		<textarea id="result" cols="35"></textarea>
+	</form>
+    <script>
+        function check_input()
+        {
+            let value = document.getElementById("input").value;
+            let k_q = true;
+            function check(value)
+            {
+                if (isNaN(value) == false)
+                {
+                    console.log(value);
+                    return k_q = true;
+                }
+                else
+                {
+                    return k_q = false;
+                }
+            }
+
+            let flag = check(value);
+            if (flag == true)
+            {
+                document.getElementById("result").innerHTML = `Giá trị vừa nhập ${value} là 1 số`;
+            }
+            else
+            {
+                document.getElementById("result").innerHTML = `Giá trị vừa nhập ${value} không phải là 1 số`; 
+            }
+        }
+    </script>
+</body>
+</html>

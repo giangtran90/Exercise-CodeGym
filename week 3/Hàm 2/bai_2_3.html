@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính giai thừa của 1 số</title>
+</head>
+<body>
+	<form>
+		<h3>Tính giai thừa của một số</h3>
+		<strong>Nhập số:</strong><br/><br/>
+		<input type="text" id="number"/>
+		<input type="button" onclick="tinh_giai_thua()" value="Result"/>
+		<input type="reset" value="Clear"/>
+		<hr width="270" align = "left"/>
+		<textarea id="result" cols="35"></textarea>
+	</form>
+ <script>
+	 function tinh_giai_thua()
+	 {
+		 let input_number = parseInt(document.getElementById("number").value);
+		 let gt = 1; 
+		 for (let i = 1; i <= input_number; i++)
+		 {
+			gt = gt*i;
+		 }
+		 document.getElementById("result").innerHTML = `Giai thừa của ${input_number} là ${gt}`;
+	 }
+    //  function sum( a ){
+    //      //console.log(a);
+	// 		if( a == 1 ){
+	// 			return a;
+	// 		} 
+	// 		let gt = a * sum (a - 1);
+	// 		console.log(gt);
+	// 		return gt;
+	// 		//5 * 4 * 3 * 2 * 1
+	// 		//4 * 3
+	// 		//3 * 2
+	// 		//2 * 1
+	// 	}
+	// 	let sum1 = sum( 5 );
+	// 	document.write( sum1 );
+ </script>   
+</body>
+</html>

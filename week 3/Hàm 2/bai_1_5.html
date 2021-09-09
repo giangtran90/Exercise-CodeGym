@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tìm chòm sao</title>
+</head>
+<body>
+    <h3>Nhập tên ngôi sao để tìm tên chòm sao</h3>
+    <input type="text" id="name_star"/>
+    <input type="button" onclick="check_Star()" value="CHECK"/>
+    <br/><br/>
+    <textarea id="result" rows="4" cols="30"></textarea>
+    
+    <script>
+        let star = ["Polaris","Aldebaran","Deneb","Vega","Altair","Dubhe","Regulus"];
+        let constellation = ["Ursa Minor","Tarurus","Cygnus","Lyra","Aquila","Ursa Major","Leo"];
+
+        function check_Star()
+        {
+            let input_name = document.getElementById("name_star").value;
+            let key = star.indexOf(input_name);
+            if (key < 0)
+            {
+                document.getElementById("result").innerHTML = `Bạn đã nhập sai tên chòm sao. Vui lòng hãy thử lại bằng tiếng Anh`
+            }
+            else
+            {
+                let find = constellation[key];
+                document.getElementById("result").innerHTML = `${input_name} là ngôi sao của chòm sao ${find}`
+            }
+        }
+    </script>
+
+</body>
+</html>

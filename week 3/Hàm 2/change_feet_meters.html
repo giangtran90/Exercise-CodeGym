@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chuyển đổi qua lại giữa feet và meter</title>
+</head>
+<body>
+    
+            
+<h3>Chuyển đổi qua lại giữa Feet và Meters</h3>
+            
+<strong>Input variable:</strong><br/><br/>
+<input type="text" id="number_1"/>
+<input type="button" onclick="change_feet_meters()" value="FEET->METERS"/>
+<input type="button" onclick="change_meters_feet()" value="METERS->FEET"/>
+<br/><br/>
+<textarea id="result" cols="55"></textarea>
+     
+
+    <script>
+        function change_feet_meters()
+        {
+            let n = Number(document.getElementById("number_1").value);
+            let meter = Number(0.305 * n);
+            document.getElementById("result").innerHTML = `feet --> meters : ${meter}`
+        }
+
+        function change_meters_feet()
+        {
+            let n = Number(document.getElementById("number_1").value);
+            let feet = Number(3.279 * n);
+            document.getElementById("result").innerHTML = `meters --> feet : ${feet}`
+        }
+    </script>
+</body>
+</html>

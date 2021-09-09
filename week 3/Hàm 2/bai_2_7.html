@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đổi chỗ 2 số nguyên</title>
+</head>
+<body>
+    <script>
+        let a = parseInt(prompt("nhập a"));
+        let b = parseInt(prompt("nhập b"));
+        function doi_cho(a,b)
+        {
+            let tg = a;
+                a = b;
+                b = tg;
+            
+            alert(`Sau khi đổi chỗ a = ${a} và b = ${b}`);
+        }
+
+        doi_cho(a,b);
+    </script>
+</body>
+</html>
