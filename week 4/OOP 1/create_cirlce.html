@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xậy dựng lớp hình tròn</title>
+</head>
+<body>
+    <script>
+        let Circle = function (ts_radius){
+            //thuộc tính
+            this.radius = ts_radius;
+
+            //gọi bán kính và diện tích
+            this.getRadius = function (){
+                return this.radius;
+            }
+            this.getArea = function(){
+                return Math.PI * this.radius * this.radius;
+            }
+            // cài đặt lại bán kính
+            this.setRadius = function (ts_radius){
+                this.radius = ts_radius;
+            }
+            this.toString = function (){
+                return `Hình tròn có bán kính ${this.radius} và diện tích ${area}`;
+            }
+        }
+
+        let circle = new Circle(4);
+        circle.setRadius(7);
+       
+        let ts_radius = circle.getRadius();
+        let area = circle.getArea();
+
+        console.log(circle.toString());
+    </script>
+</body>
+</html>

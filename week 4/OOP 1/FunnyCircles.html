@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vẽ hình tròn bằng canvas</title>
+</head>
+<body>
+    <canvas id="my_canvas" width="700px" height="700" style="border:1px solid red;"></canvas>
+    <script>
+        function Circle (ts_x, ts_y, ts_radius)
+        {
+            this.x = ts_x;
+            this.y = ts_y;
+            this.radius = ts_radius;
+        }
+        
+        // Khởi tạo một mảng mà RGB cho hình tròn
+        // khởi tạo giá trị màu chạy từ 0 -> 255
+        function getRandomHex()
+        {
+            return Math.floor(Math.random() * 255);
+        }
+
+        // Hàm tạo màu random
+        function getRandomColor()
+        {
+            var red = getRandomHex();
+            var green = getRandomHex();
+            var blue = getRandomHex();
+            return `rgb(${red},${green},${blue})`;
+        }
+
+        function createCircle()
+        {
+            var ctx = document.getElementById("my_canvas").getContext("2d"); 
+            
+            // khởi tạo bán kính, tọa độ random cho hình tròn
+            var ts_x = Math.random() * window.innerWidth;
+            var ts_y = Math.random() * window.innerHeight;
+            var ts_radius = Math.floor(Math.random()*80); 
+            var color = getRandomColor();
+            var circle = new Circle(ts_x, ts_y, ts_radius);
+            
+            // Vẽ hình tròn
+            ctx.beginPath();
+            ctx.arc(circle.x, circle.y, circle.radius, 0, 2 * Math.PI);
+            ctx.fillStyle = color;
+            ctx.fill();
+        }
+
+        function createMultipleCircle()
+        {
+            for (i = 0; i < Math.floor(Math.random()*30); i++)
+            {
+                createCircle();   
+            }
+            console.log(i)
+        }
+        createMultipleCircle();
+        
+    </script>
+</body>
+</html>

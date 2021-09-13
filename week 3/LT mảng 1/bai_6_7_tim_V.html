@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bai 6 và 7</title>
+</head>
+<body>
+  <script>
+    let a = [10,-9.6,8,11,15,-5,2,-4,20,23];
+    alert(`Mảng bản đầu là: ${a}`);
+    let input = parseInt(prompt("Nhập số: "));
+    function check_Integer()
+    {
+        let key = a.indexOf(input);
+        if (key < 0)
+        {
+            alert(`phần tử ${input} không có trong mảng`);
+        }
+        else
+        {
+            alert(`phần tử ${input} có trong mảng a = [${a}]`);
+            a.splice(key,1);
+        }
+        alert(`Sau khi xóa phần tử ${input} có trong mảng thì mảng còn lại là a = [${a}]`);
+    }
+    check_Integer();
+  </script>  
+</body>
+</html>

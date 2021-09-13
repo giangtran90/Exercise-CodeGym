@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiểm tra 2 chuỗi</title>
+</head>
+<body>
+    <script>
+        let string_1 = prompt('Nhập chuỗi 1: ');
+        let string_2 = prompt('Nhập chuỗi 2: ');
+        function so_sanh()
+        {
+            let arrayOfChar1 = string_1.split("");
+            let arrayOfChar2 = string_2.split("");
+            
+            if(arrayOfChar1.length == arrayOfChar2.length)
+            {
+                for (let i = 0; i < arrayOfChar1.length; i++)
+                {
+                    if (arrayOfChar1[i] === arrayOfChar2[i])
+                    {
+                        alert(`2 chuỗi nhập vào giống y hệt nhau`);
+                        break;
+                    }
+                    else
+                    {
+                        alert(`2 chuỗi nhập vào không giống nhau`);
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                alert(`2 chuỗi nhập vào không giống nhau`);
+            }
+        }
+
+        so_sanh();
+    </script>
+    
+</body>
+</html>

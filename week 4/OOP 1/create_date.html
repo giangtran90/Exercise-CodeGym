@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xây dựng lớp Date</title>
+</head>
+<body>
+    <script>
+        // Đặt tên lớp
+        let InputDate = function (ts_day, ts_month, ts_year){
+            //thuộc tính
+            this.day = ts_day;
+            this.month = ts_month;
+            this.year = ts_year;
+
+            // phương thức trả về ngày tháng năm
+            this.getDay = function (){
+                return this.day;
+            }
+            this.getMonth = function (){
+                return this.month;
+            }
+            this.getYear= function (){
+                return this.year;
+            }
+
+            // phương thức thiết đặt lại ngày tháng năm
+            this.setDay = function (ts_day){
+                this.day = ts_day;
+            }
+            this.setMonth = function (ts_month){
+                this.month = ts_month;
+            }
+            this.setYear = function (ts_year){
+                this.year = ts_year;
+            }
+
+            // Tạo phương thức setDate để đặt lại ngày tháng năm
+            this.setDate = function (ts_day, ts_month, ts_year){
+                this.day = ts_day;
+                this.month = ts_month;
+                this.year = ts_year;
+            }
+
+            this.toString = function (){
+                return `Ngày ${this.day} tháng ${this.month} năm ${this.year}`;
+            }
+
+        };
+
+        let input_date = new InputDate(13,9,2021);
+        // console.log(input_date);
+
+        // Khởi tạo ngày tháng năm mới
+        input_date.setDay(14);
+        input_date.setMonth(9);
+        input_date.setYear(2021);
+
+        // khởi tạo một ngày tháng năm mới từ setDate;
+        input_date.setDate(31,12,2021);
+        // Trả về ngày tháng năm
+        let ts_day = input_date.getDay();
+        console.log(ts_day);
+        let ts_month = input_date.getMonth();
+        let ts_year = input_date.getYear();
+
+        //console.log(`${ts_day}/${ts_month}/${ts_year}`);
+        console.log(input_date.toString());
+        
+    </script>
+</body>
+</html>

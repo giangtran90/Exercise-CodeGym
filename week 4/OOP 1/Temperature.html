@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chuyển đổi nhiệt độ</title>
+</head>
+<body>
+    <script>
+        // Viết một lớp các đối tượng mô tả loại dữ liệu nhiệt độ lấy tên là Temperature. Các thông số mô tả cho nhiệt độ gồm:
+
+        // Trị số tính theo đơn vị độ C (giá trị nhỏ nhất -273 độ)
+
+        // Có tính năng chuyển đổi từ độ C sang độ F.
+
+        // Có tính năng chuyển đổi từ độ C sang độ Kenvin.
+
+        // Sử dụng lớp vừa định nghĩa để xây dựng một chương trình JavaScript với kịch bản như sau:
+
+        // Khởi tạo một đối tượng Temperature.
+
+        // Gán giá trị độ C cho đối tượng ở nhiệt độ 25 độ.
+
+        // Hiển thị ra màn hình nhiệt độ F và độ Kenvin tương ứng.
+        let Temperature = function (ts_do_C){
+            this.do_C = ts_do_C;
+
+            this.getC = function()
+            {
+                return this.do_C;
+            }
+
+            this.getF = function(ts_do_C)
+            {
+                return  this.do_C * 9 / 5 + 32;
+            }
+
+            this.getKenvin = function(ts_do_C)
+            {
+                return (this.do_C + 273) * 15;
+            }
+        }
+
+        let temperature = new Temperature(25);
+        let ts_do_C = temperature.getC();
+        document.write(`${ts_do_C} độ C thì bằng ${temperature.getF()} độ F`);
+        document.write("<br/>");
+        document.write(`${ts_do_C} độ C thì bằng ${temperature.getKenvin()} độ KenVin`);
+        // console.log(temperature.getF());
+        // console.log(temperature.getKenvin());
+
+    </script>
+</body>
+</html>

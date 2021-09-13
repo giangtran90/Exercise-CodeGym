@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ve hình chữ nhật</title>
+</head>
+<body>
+    <canvas id="my_canvas" width="300px" height="300px" style="border: 1px solid green;"></canvas>
+    <script>
+        let Rectange = function (ts_x, ts_y, ts_width, ts_height)
+        {
+            this.x = ts_x;
+            this.y = ts_y;
+            this.width = ts_width;
+            this.height = ts_height;
+
+            this.getWidth = function(){
+                return this.x;
+            }
+            this.getHeight = function(){
+                return this.y;
+            }
+
+            this.getPerimeter = function(ts_width, ts_height){
+                return (this.width + this.height) * 2;
+            } 
+
+            this.getArea = function(ts_width, ts_height){
+                return this.width * this.height;
+            }
+        }
+
+        function createRectange()
+        {
+            var ctx = document.getElementById("my_canvas").getContext("2d");
+            var rectange = new Rectange(30, 30, 70, 40);
+
+            // ve hình chữ nhật
+            ctx.fillRect(rectange.x, rectange.y, rectange.width, rectange.height);
+            ctx.fillStyle = "#FF0000";
+            ctx.font = "20px Arial";
+            ctx.fillText(rectange.width, 55, 25);
+            ctx.fillText(rectange.height, 5, 60);
+            ctx.fillText(`chu vi hình chữ nhật là ${rectange.getPerimeter()}`, 30, 100);
+            ctx.fillText(`chu vi hình chữ nhật là ${rectange.getArea()}`, 30, 130);
+
+            console.log(rectange.getPerimeter());
+            console.log(rectange.getArea());
+
+        }
+
+    createRectange();
+    </script>
+</body>
+</html>

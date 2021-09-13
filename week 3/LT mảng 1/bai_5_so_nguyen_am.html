@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bai 5</title>
+</head>
+<body>
+    
+    <script>
+        let a = [10,-9.6,8,11,15,-5,2,-4,20,23];
+        let k_q = true;
+        let b = [];
+        let count = 0;
+        
+        function check_Integer(a)
+        {
+            for (let i = 0; i < a.length - 1; i++)
+            {
+                if(Number.isInteger(a[i]) == true)
+                {
+                    if (a[i] >= 0)
+                    {
+                        k_q = true;
+                    }
+                    else
+                    {
+                        k_q = false;
+                        b.push(a[i]);
+                        count++;
+                    }
+                }
+            }
+            console.log(count);
+            console.log(b);
+            alert(`Trong mảng có ${count} số nguyên âm là: ${b}`);
+        }
+
+        check_Integer(a);
+    </script>
+</body>
+</html>

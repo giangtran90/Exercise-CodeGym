@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đếm số từ trong một chuỗi nhập vào</title>
+</head>
+<body>
+    <script>
+        let inputString = prompt("Nhập chuỗi: ");
+        let count = 0;
+        var Regex='/^[^a-zA-Z]*$/';
+
+//  if(Regex.test(Word))
+//  {
+//  //...
+//  }
+        function countString()
+        {
+            let arrayofchart = inputString.split("");
+            console.log(arrayofchart);
+            let k_q = true;
+            for(let i = 0; i < arrayofchart.length; i++)
+            {
+                if (isNaN(arrayofchart.charAt) == true)
+                {
+                    console.log(arrayofchart);
+                    // if (typeof arrayofchart[i] == 'string')
+                    // {
+                    //     count++;
+                    // }
+                     if(Regex.test(arrayofchart))
+                    {
+                     count++;
+                    }
+                }
+            }
+            console.log(count);
+            alert(`chuỗi nhập vào có ${count} kí từ là từ`);
+        }
+
+        countString();
+    </script>
+</body>
+</html>
