@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xây dựng lớp mô tả điện thoại</title>
+</head>
+<body>
+    <script>
+        class Mobile
+        {
+            constructor (ts_ten)
+            {
+                // Có một thông số về trạng thái pin tính bằng đơn vị số nguyên (tối đa 100 đv)
+                // Có một vùng nhớ dùng để lưu tin nhắn đang soạn thảo.
+                // Có một vùng nhớ dùng để lưu tin nhắn trong hộp thư đến.
+                // Có một vùng nhớ dùng để lưu tin nhắn đã gửi.
+                this.ten_dien_thoai = ts_ten;
+                this.trang_thai_pin = 100;
+                this.tin_đang_soan = "";
+                this.hop_thu_den = [];
+                this.tin_da_gui = [];
+                this.trang_thai_bat = false;
+            }
+
+            // Có chức năng kiểm tra trạng thái điện thoại bật hay tắt.
+            kiem_tra()
+            {
+                this.trang_thai_pin--;
+                if (this.trang_thai_bat == false)
+                {
+                    alert(`Vui lòng bật điện thoại`);
+                }
+            }
+            //Có chức năng bật và tắt điện thoại.
+            bat_dien_thoai()
+            {
+                this.trang_thai_pin--;
+                this.trang_thai_bat = true;
+            }
+            //Có chức năng xạc pin điện thoại.
+            sac_pin()
+            {
+                this.trang_thai_pin++;
+
+
+            }
+            //Có chức năng soạn tin nhắn.
+            soan_tin_nhan(ts_noi_dung)
+            {
+                this.trang_thai_pin--;
+                this.tin_đang_soan = ts_noi_dung;
+
+            }
+            //chức năng nhận tin nhắn từ một chiếc mobile khác.
+            nhan_tin_nhan(ts_noi_dung)
+            {
+                this.trang_thai_pin--;
+                // iphone nhân tin nhắn từ samsung
+                this.hop_thu_den.push(ts_noi_dung);
+
+            }
+            //chức năng gửi tin nhắn tới một chiếc mobile khác.
+            gui_tin_nhan(obj_mobile)
+            {
+                this.trang_thai_pin--;
+                // lưu tin đã gửi vào mảng
+                this.tin_da_gui.push(this.tin_đang_soan);
+                // samsung gửi tin cho iphone
+                obj_mobile.nhan_tin_nhan(this.tin_đang_soan);
+
+            }
+            //chức năng xem tin trong hộp thư đến.
+            xem_tin_hop_thu_den()
+            {
+                this.trang_thai_pin--;
+                let html = "";
+                for (let i = 0; i < this.hop_thu_den.length; i++)
+                {
+                    html += this.hop_thu_den[i] + "<br/>";
+                }
+                return html;
+            }
+            //chức năng xem tin đã gửi.
+            xem_tin_da_gui(ts_noi_dung)
+            {
+                this.trang_thai_pin--;
+                let html = "";
+                for (let i = 0; i < this.tin_da_gui.length; i++)
+                {
+                    html += this.tin_da_gui[i] + "<br/>";
+                }
+                return html;
+            }
+
+            xoa_hop_thu_den()
+            {
+                this.trang_thai_pin--;
+                this.hop_thu_den = [];
+            }
+        }
+        let iphone = new Mobile("Iphone");
+        iphone.bat_dien_thoai();
+        iphone.xem_tin_hop_thu_den();
+        
+
+        let samsung = new Mobile("SamSung");
+        samsung.bat_dien_thoai();
+        samsung.kiem_tra();
+        samsung.soan_tin_nhan("Xin chào điện thoại iphone");
+        samsung.gui_tin_nhan(iphone);
+        
+        iphone.soan_tin_nhan("xin chào điện thoại Samsung");
+        iphone.gui_tin_nhan(samsung);
+
+        // tin nhắn 3 iphone gửi cho samsung
+        iphone.soan_tin_nhan("tôi đang học code");
+        iphone.gui_tin_nhan(samsung);
+        
+        // xóa tất cả tin nhắn trong hộp thư đến
+        iphone.xoa_hop_thu_den();
+        // soạn tin nhắn mới
+        samsung.soan_tin_nhan("thử lại");
+        samsung.gui_tin_nhan(iphone);
+
+        console.log(samsung);
+        console.log("<hr/>");
+        console.log(iphone);
+
+    </script>
+</body>
+</html>

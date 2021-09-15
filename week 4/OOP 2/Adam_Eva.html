@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Câu chuyện Adam và Eva</title>
+</head>
+<body>
+    <script>
+        class Apple
+        {
+            constructor()
+            {
+                // quả táo có khối lượng mặc đinh = 10
+                this.weight = 10;
+                this.empty = false;
+            }
+            decrease ()
+            {
+                if ( this.weight > 0)
+                {
+                    this.weight --;
+                }
+            }
+            isEmpty()
+            {
+                return this.empty = true;
+            }
+            // trả về khối lượng quả táo
+            getWeight ()
+            {
+                return this.weight;
+            }
+        }
+
+        class Human
+        {
+            // Khởi tạo đối tượng
+            constructor()
+            {
+                this.name;
+                this.gender;
+                this.weight;
+                this.is_say = [];
+                this.check_weight_apple = [];
+            }
+            // truyền vào giới tính
+            isMale()
+            {
+                return this.gender;
+            }
+            //truyền giới tính
+            setGenger(ts_gender)
+            {
+                if (ts_gender == true)
+                {
+                    this.gender = "male";
+                }
+                else
+                {
+                    this.gender = "female";
+                }
+            }
+            // kiểm tra trái táo
+            checkApple(obj_apple)
+            {
+                if (obj_apple.empty == false)
+                {
+
+                    this.check_weight_apple.push(obj_apple.weight);
+        
+                }
+
+            }
+            eat (obj_apple)
+            {
+                if (obj_apple.weight > 0)
+                    {
+                        obj_apple.weight --;
+                        this.weight ++;
+                    }
+                
+            }
+            say (ts_string)
+            {
+                this.is_say.push(ts_string);
+
+            }
+            //truyền tên vào
+            setName (ts_name)
+            {
+                this.name = ts_name;
+            }
+            getName ()
+            {
+                return this.name;
+            }
+            // truyền cân nặng vào
+            setWeight (ts_weight)
+            {
+                this.weight = ts_weight;
+            }
+            getWeight()
+            {
+                return this.weight;
+            }
+
+
+
+        }
+        // test đối tượng pin
+        let apple = new Apple();
+        // apple.decrease ();
+        // apple.decrease ();
+        // apple.isEmpty();
+        
+        // test đối tượng adam
+        let adam = new Human()
+        adam.setName("Adam");
+        adam.setWeight(65);
+        adam.setGenger(true);
+        adam.say("chào Eva");
+        adam.eat(apple);
+        adam.checkApple(apple);
+        
+        // test đối tượng eva
+        let eva = new Human()
+        eva.setName("Eva");
+        eva.setWeight(50);
+        eva.setGenger(false);
+        eva.say("chào Adam");
+        eva.eat(apple);
+        eva.checkApple(apple);
+
+        console.log(apple);
+        console.log(apple.weight);
+        console.log("=====================================");
+        console.log(adam);
+        console.log
+        console.log("=====================================");
+        console.log(eva);
+    </script>
+</body>
+</html>

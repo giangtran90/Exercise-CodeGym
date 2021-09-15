@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mô phỏng đèn pin</title>
+</head>
+<body>
+    <script>
+        //khởi tạo lớp Battery
+        class Battery
+        {
+            // khởi tạo thuộc tính năng lượng
+            constructor ()
+            {
+                this.energy = 0;
+            }
+            // khởi tạo hàm tạo năng lượng
+            setEnergy (ts_energy)
+            {
+                this.energy = ts_energy;
+            }
+            // trả về năng lượng
+            getEnergy ()
+            {
+                return this.energy;
+            }
+            // giảm năng lượng
+            decreaseEnergy()
+            {
+                if (this.energy > 0)
+                {
+                    this.energy -- ;
+                }
+            }
+        }
+
+        class FlashLamp
+        {
+            constructor ()
+            {
+                this.status = false;
+                this.battery;
+            }
+            // truyền battery vào
+            setBattery (ts_battery)
+            {
+                this.battery = ts_battery;
+            }
+            getBattery ()
+            {
+                return this.battery;
+            }
+            // trạng thái đèn
+            light ()
+            {
+                if (this.status == true)
+                {
+                   
+                    //console.log(this.battery);
+                    if (this.battery.getEnergy() > 0)
+                    {
+                        console.log("Đèn sáng");
+                        this.battery.decreaseEnergy();
+                    }
+                    }
+                    else
+                    {
+                        console.log("Đèn tắt");
+                        console.log(this.battery.getEnergy());
+                    }
+            }
+            // Bật đèn
+            turnOn ()
+            {
+                this.status = true;
+            }
+            // tắt đèn
+            turnOf ()
+            {
+                this.status = false;
+            }
+        }
+
+        //test khởi tạo đối tượng battery và hiện thị kết quả
+        let battery = new Battery();
+        battery.setEnergy(15);
+        //battery.decreaseEnergy();
+
+        // test khởi tạo đối tượng đèn và hiện thị kết quả
+        let flash_1 = new FlashLamp();
+
+        //lắp pin
+        flash_1.setBattery (battery)
+
+        // bật đèn
+        flash_1.turnOn();
+        flash_1.light();
+
+        // tắt đèn
+        flash_1.turnOf();
+        flash_1.light();
+        
+        console.log(battery);
+        console.log(flash_1);
+    </script>
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>xây dựng lớp Mobile</title>
+</head>
+<body>
+    <script>
+        class Mobiles
+        {
+            constructor (name_mobile)
+            {
+                // thuộc tính tên điện thoại
+                this.name = name_mobile;
+                // trạng thái ban đầu của pin
+                this.trang_thai_pin = 100;
+                // thuộc tính soạn thảo tin nhắn
+                this.soan_tin = "";
+                // thuộc tính tin nhắn gửi
+                this.gui_tin = [];
+                // thuộc tính nhận tin
+                this.nhan_tin = [];
+                // trạng thái ban đầu của máy
+                this.trang_thai_may = false;
+            }
+
+            // kiểm tra máy bật tắt
+            check_mobile()
+            {
+                this.trang_thai_pin --;
+                if(this.trang_thai_may == false)
+                {
+                    alert("Hãy bật điện thoại");
+                }
+            }
+            // bât máy điện thoại
+            start_mobile()
+            {
+                this.trang_thai_pin --;
+                this.trang_thai_may = true;
+            }
+            // Soạn tin nhắn
+            write_message(message)
+            {
+                this.trang_thai_pin --;
+                this.soan_tin = message;
+            }
+            // chức năng nhận tin nhắn
+            receive_messages(message)
+            {
+                this.trang_thai_pin --;
+                // nhận tin từ máy mobile_1
+                this.nhan_tin.push(message);
+            }
+            // chức năng gửi tin nhắn
+            send_message (to_mobile)
+            {
+                this.trang_thai_pin --;
+                // lưu tin vào gửi tin
+                this.gui_tin.push(this.soan_tin);
+                //gửi đên máy mobile_2
+                to_mobile.receive_messages(this.soan_tin);
+                
+            }
+            // chức năng xem tin nhắn hộp thư đến
+            see_inbox_message ()
+            {
+                this.trang_thai_pin --;
+                let html = "";
+                for (let i = 0; i < this.nhan_tin.length; i++)
+                {
+                    html += this.nhan_tin[i] + "<br/>";
+                }
+                return html;
+            }
+            // chức năng xóa tin nhắn hộp thư đến
+            clear_inbox_message()
+            {
+                this.trang_thai_pin --;
+                this.nhan_tin = [];
+            }
+            // chức năng xem tin đã gửi
+            see_sent_messages()
+            {
+                this.trang_thai_pin --;
+                let html = "";
+                for (let i = 0; i < this.gui_tin.length; i++)
+                {
+                    html += this.gui_tin[i] + "<br/>";
+                }
+                return html;
+            }
+            // chức năng xóa tất cả tin đã gửi
+            clear_sent_messages()
+            {
+                this.trang_thai_pin --;
+                this.gui_tin = [];
+            }
+
+        }
+
+        let mobile_1 = new Mobiles('Iphone');
+        //test bật máy
+        mobile_1.start_mobile();
+        //test kiểm tra máy
+        //mobile_1.check_mobile();
+        //test soạn tin nhắn
+        mobile_1.write_message("Xin chào bạn mobile_2");
+        
+
+
+        let mobile_2 = new Mobiles('Nokia');
+        mobile_2.start_mobile();
+
+        // gửi tin máy 1 đến mobile_2
+        mobile_1.send_message(mobile_2);
+
+        // mobile_2 gửi tin cho mobile_1
+        mobile_2.write_message("Chào bạn mobile_1");
+        mobile_2.send_message(mobile_1);
+        
+        // test xóa tin nhắn hộp thư đến máy mobile_2
+        mobile_2.clear_inbox_message();
+
+        
+
+        console.log(mobile_1);
+        console.log("============================")
+        console.log(mobile_2);
+        console.log("============================")
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Công tắc và bóng đèn</title>
+</head>
+<body>
+    <script>
+        class SwitchButton
+        {
+            constructor ()
+            {
+                this.status = false;
+                this.lamp = ElectricLamp;
+            }
+            // khởi tạo kết nối với lamp ko có giá trị trả về
+            connectToLamp (ElectricLamp)
+            {
+                return this.lamp;
+            }
+            // tắt đèn
+            switchOf ()
+            {
+                this.status = false;
+            }
+            // bật đèn
+            switchOn ()
+            {
+                this.status = true;
+            }
+        }
+
+        class ElectricLamp
+        {
+            constructor ()
+            {
+                this.status = false;
+            }
+
+            turnOf()
+            {
+                this.status = false;
+            }
+
+            turnOn()
+            {
+                this.status = true;
+            }
+
+            checkLamp()
+            {
+                if(this.status == false)
+                {
+                    alert(`Đèn đang tắt`)
+                }
+                else
+                {
+                    alert(`Đèn đang sáng`);
+                }
+            }
+        }
+
+        let button_1 = new SwitchButton();
+        
+        let lamp_1 = new ElectricLamp();
+
+        // Công tắc kết nối với bóng đèn
+        button_1.connectToLamp(lamp_1);
+        // tắt đèn
+        // button_1.switchOf();
+        // lamp_1.turnOf();
+        // bật đèn
+        button_1.switchOn();
+        lamp_1.turnOn();
+
+        lamp_1.checkLamp();
+
+        console.log(button_1);
+        console.log("===========================");
+        console.log(lamp_1);
+    </script>
+</body>
+</html>
