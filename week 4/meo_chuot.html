@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Rat
+        {
+            constructor(ts_name, ts_weight, ts_speed)
+            {
+                this.name = ts_name;
+                this.weight = ts_weight;
+                this.speed = ts_speed;
+                this.check_die = false;
+                this.mouse_say = [];
+            }
+
+            setName (ts_name)
+            {
+                this.name = ts_name;
+            }
+            getName ()
+            {
+                return this.name;
+            }
+
+            setWeight (ts_weight)
+            {
+                this.weight = ts_weight;
+            }
+            getWeight ()
+            {
+                return this.weight;
+            }
+
+            setSpeed (ts_speed)
+            {
+                this.speed = ts_speed;
+            }
+            getSpeed ()
+            {
+                return this.speed;
+            }
+
+            checkDie()
+            {
+                this.check_die = true
+            }
+
+            setMouseSay (toString)
+            {
+                this.mouse_say.push(toString);
+            }
+            getMouseSay()
+            {
+                return this.mouse_say;
+            }
+        }
+
+        class Cat
+        {
+            constructor(ts_name, ts_weight, ts_speed, ts_mouse)
+            {
+                this.name = ts_name;
+                this.weight = ts_weight;
+                this.speed = ts_speed;
+                this.cat_say = [];
+                this.mouse = ts_mouse;
+            }
+
+            setName (ts_name)
+            {
+                this.name = ts_name;
+            }
+            getName ()
+            {
+                return this.name;
+            }
+
+            setWeight (ts_weight)
+            {
+                this.weight = ts_weight;
+            }
+            getWeight ()
+            {
+                return this.weight;
+            }
+
+            setSpeed (ts_speed)
+            {
+                this.speed = ts_speed;
+            }
+            getSpeed ()
+            {
+                return this.speed;
+            }
+
+            setCatSay (toString)
+            {
+                this.cat_say.push(toString);
+            }
+            getCatSay()
+            {
+                return this.cat_say;
+            }
+
+            setMouse(ts_mouse)
+            {
+                this.mouse = ts_mouse;
+            }
+            getMouse()
+            {
+                return this.mouse;
+            }
+
+            bat_Chuot()
+            {
+                if (this.speed > this.mouse.speed)
+                {
+                    alert("Mèo đã bắt được chuột");
+                    if (this.mouse.check_die == false)
+                    {
+                        alert("Mèo ăn chuột");
+                        this.weight = this.weight + this.mouse.weight;
+                        alert("Hiện mèo nặng: " + this.weight + "g");
+                        this.mouse.weight = 0;
+                        this.mouse.check_die = true;
+                    }
+                    else
+                    {
+                        alert("chuột chết ko thèm ăn");
+                    }
+                }
+                else
+                {
+                    alert("Mèo không chạy nhanh bằng chuột");
+                }
+            }
+
+        }
+
+        
+
+        let chuot = new Rat();
+        chuot.setName("Jerry");
+        chuot.setWeight(150);
+        chuot.setSpeed(30);
+        chuot.setMouseSay("chit chit");
+
+        chuot.getName();
+        chuot.getWeight();
+        chuot.getSpeed();
+        chuot.getMouseSay();
+        //chuot.checkDie();
+
+        let meo = new Cat();
+        meo.setName("Tom");
+        meo.setWeight(1000);
+        meo.setSpeed(40);
+        meo.setCatSay("meo meo");
+
+        meo.getName();
+        meo.getWeight();
+        meo.getSpeed();
+        meo.getCatSay();
+        meo.setMouse(chuot);
+        meo.getMouse();
+        meo.bat_Chuot();
+
+        console.log(chuot);
+        console.log(meo);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="canvas" style="background:green"></canvas>
+    <script>
+        var can = document.getElementById('canvas');
+        can.height = 500; can.width = 500;
+        var ctx = can.getContext('2d');
+        var x = 10, y = 50;
+
+
+        function draw() {
+            ctx.beginPath();
+            ctx.arc(x, y, 20, 0, 2 * Math.PI);
+            ctx.fillStyle = 'rgba(11, 46, 10, 0.4)';
+            ctx.fill();
+
+            x += 1;
+            ctx.fillStyle = "rgba(177, 223, 175, 0.4)";
+            ctx.fillRect(0, 0, can.width, can.height);
+            requestAnimationFrame(draw);
+            //ctx.clearRect(0,0,can.width,can.height);
+        }
+        draw();
+    </script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class hinhchunhat{
+            constructor(ts_chieudai,ts_chieurong)
+            {
+                this.chieu_dai = ts_chieudai;
+                this.chieu_rong = ts_chieurong;    
+            }
+
+            setChieuDai (ts_chieudai)
+            {
+                this.chieu_dai = ts_chieudai;
+            }
+
+            getChieuDai ()
+            {
+                return this.chieu_dai;
+            }
+
+            setChieuRong (ts_chieurong)
+            {
+                this.chieu_rong = ts_chieurong;
+            }
+
+            getChieuRong ()
+            {
+                return this.chieu_rong;
+            }
+
+            getChuVi (ts_chieudai,ts_chieurong)
+            {
+                return (this.chieu_dai + this.chieu_rong)*2;
+            }
+        }
+
+        let hcn = new hinhchunhat(7,8);
+        // hcn.setChieuDai(7);
+        // hcn.getChieuDai();
+        // hcn.setChieuRong(8);
+        // hcn.getChieuRong();
+        
+        // console.log(hcn.getChieuDai());
+        // hcn.chieu_dai = 5;
+        // hcn.chieu_rong = 4;
+        
+        console.log(hcn.getChuVi());
+    </script>
+</body>
+</html>

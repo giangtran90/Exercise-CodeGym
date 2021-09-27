@@ -4,24 +4,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>thay "-: bằng "_"</title>
+    <title>Document</title>
 </head>
 <body>
     <script>
-        let a = [1,2,"-",3,4,"-",5]
-        for (let i = 0; i < a.length; i++)
+        let a = [2,4,6,-5,7,10,0];
+        let max = a[0];
+        a.splice(3,1);
+        
+        for (let i = 1; i < a.length; i++)
         {
-            if (a[i] == "-")
+            if (a[i] > max)
             {
-                a.splice(i,1,"_");
-            }
-            else
-            {
-                console.log(a);
+                max = a[i];
             }
         }
+        console.log(max);
         console.log(a);
-        alert(`Mảng sau khi thay thế là: ${a}`);
+
     </script>
+    
 </body>
 </html>

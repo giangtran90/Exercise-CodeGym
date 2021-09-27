@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Đăng ký</title>
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <script src="/createForm.js"></script>
+</head>
+<body>
+    <div class="container">
+        <form>
+            <h1>Đăng ký</h1>
+            <div class="form-field1">
+                <h3>Tên đăng nhập</h3>
+                <input id="name" type="text" placeholder="Ex:Adam"/>
+            </div>
+            <div class="form-field1">
+                <h3>Mật khẩu</h3>
+                <input id="pass" type="password" placeholder="Ex:Adam123"/>
+            </div>
+            <div class="form-field1">
+                <h3>Email</h3>
+                <input id="email" type="email" placeholder="Ex: @gmail.com"/>
+            </div>
+            <input id="create" type="button" value="Đăng ký" onclick="createNewAccount();"/>
+            <!-- <input id="view" type="button" value="xem" onclick="viewNewAccount();"/> -->
+        </form>
+    </div>
+</body>
+
+</html>

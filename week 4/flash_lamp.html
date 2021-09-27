@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Battery{
+            constructor()
+            {
+                this.energy = 0;
+            }
+
+            setEnergy (ts_energy)
+            {
+                this.energy = ts_energy; 
+            }
+
+            getEnergy()
+            {
+                return this.energy;
+            }
+
+            decreaseEnergy()
+            {
+                if (this.energy > 0){
+                    this.energy --;
+                }
+                else
+                {
+                    alert("vui lòng sạc pin");
+                }
+            }
+
+        }
+
+        class FlashLamp{
+            constructor(ts_battery)
+            {
+                this.status = false;
+                this.battery = ts_battery;
+            }
+
+            setBattery(ts_battery)
+            {
+                this.battery = ts_battery;
+            }
+
+            getBattery()
+            {
+                return this.battery;
+            }
+
+            light()
+            {
+                if (this.status == true)
+                {
+                    alert('đèn sáng');
+                }
+                else
+                {
+                    alert('đèn tắt');
+                }
+            }
+
+            turnOn()
+            {
+                this.status = true;
+                this.battery.decreaseEnergy();
+            }
+
+            turnOff()
+            {
+                this.status = false;
+            }
+        }
+
+        let bat = new Battery();
+        bat.setEnergy(1);
+        //bat.decreaseEnergy();
+
+        let flash = new FlashLamp();
+        flash.setBattery(bat);
+        flash.turnOn();
+        flash.light();
+        flash.turnOn();
+        flash.light();
+        
+
+
+        console.log(bat.getEnergy());
+        console.log(flash.getBattery());
+        //console.log()
+    </script>
+</body>
+</html>

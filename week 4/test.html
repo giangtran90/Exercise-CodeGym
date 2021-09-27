@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    // 1,2,3,5,8,.. so sau = a + b;
+    let a = Number(prompt('nhập a: '));
+    let b = Number(prompt('nhập b: '));
+    let arr = [];
+    arr[0] = a;
+    arr[1] = b;
+    for (let i = 2; i < 20; i++)
+    {
+        arr[i] = arr[i-2] + arr[i-1];
+        if (arr[i] % 5 == 0 )
+        {
+            console.log(arr[i]);
+            break;
+        }
+        
+    }
+    console.log(arr);
+
+    // //Nếu muốn hiển thị các cặp số nguyên dương có tổng là 10 thì viết thế nào?
+    // for (let i = 0; i <= 10; i++) 
+    // {
+    //     for (let j = 0; j <=10; j++)
+    //     {
+    //         if (i + j == 10)
+    //         {
+    //             console.log(`${i} + ${j} = 10`);
+    //         }
+    //     }
+    // }
+
+    //Nếu muốn hiển thị hình tam giác vuông * thì nên viết thế nào?
+    for (let i = 0; i < 9; i++)
+    {
+        // tạo 10 hàng
+        for (let j = 0; j < 9 - i; j++)
+        {
+            document.write(' * ');
+        }
+        // xuống dòng khi hiển thị kết quả từng hàng
+        document.write('<br>');
+    }
+    
+    
+    
+    // let bang_cuu_chuong = [];
+    // for (var i = 0; i < 9; i++) 
+    // {   
+    //     // mở hộp i
+    //     bang_cuu_chuong[i] = [];
+    //     for (var j = 0; j <= 8; j++)
+    //     {
+    //      // mở hộp j
+    //      bang_cuu_chuong[i][j] = "x";   
+    //     }   
+    // }
+    // console.log(bang_cuu_chuong);
+    </script>
+</body>
+</html>

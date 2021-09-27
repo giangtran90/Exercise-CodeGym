@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- vẽ hình tròn bằng canvas  -->
+    <canvas id="my_canvas" width="500px" height="500px" style="border: 2px solid brown;"></canvas>
+    <!-- <div id="game"></div> -->
+    <script>
+        class Hinh{
+            constructor(ts_x, ts_y, ts_width, ts_height, ts_radius, ts_left)
+            {
+                this.x = ts_x;
+                this.y = ts_y;
+                this.radius = ts_radius;
+                this.width = ts_width;
+                this.height = ts_height;
+                this.left = ts_left;
+                this.speed = 50;
+            }
+
+            moveRight()
+            {
+                this.left += this.speed;
+            }
+
+            setWidth (ts_width)
+            {
+                this.width = ts_width;
+            }
+
+            getWidth ()
+            {
+                return this.width;
+            }
+
+            setHeight (ts_height)
+            {
+                this.height = ts_height;
+            }
+
+            getHeight ()
+            {
+                return this.height;
+            }
+
+            setX (ts_x)
+            {
+                this.x = ts_x;
+            }
+
+            getX ()
+            {
+                return this.x;
+            }
+
+            setY (ts_y)
+            {
+                this.y = ts_y;
+            }
+
+            getY ()
+            {
+                return this.y;
+            }
+
+            setRadius (ts_radius)
+            {
+                this.radius = ts_radius;
+            }
+
+            getRadius ()
+            {
+                return this.radius;
+            }
+
+            ve_HinhTron(ts_x, ts_y, ts_radius)
+            {
+                var ctx = document.getElementById("my_canvas").getContext("2d");
+
+                // Vẽ hình tròn
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.radius, 0, 2 * Math.PI);
+                ctx.stroke();
+            }
+
+            ve_HinhVuong(ts_x, ts_y, ts_width, ts_height)
+            {
+                var ctx = document.getElementById("my_canvas").getContext("2d");
+
+                //vẽ hình vuông
+                ctx.fillStyle='#fa4b2a';
+                ctx.fillRect(this.x, this.y, this.width, this.height);
+                // ctx.stroke(); 
+
+            }
+        }
+
+        class Start
+        {
+            constructor(ts_hinh)
+            {
+                this.hinh = ts_hinh;
+            }
+
+            setHinh (ts_hinh)
+            {
+                this.hinh = ts_hinh;
+            }
+
+            getHinh ()
+            {
+                return this.hinh;
+            }
+
+            moveHinh ()
+            {
+                if ( this.hinh.left < 500)
+                {
+                    this.hinh.moveRight();
+                }
+                document.getElementById('my_canvas').innerHTML = this.hinh.ve_HinhTron();
+                setTimeout(moveHinh, 500);
+            }
+        }
+
+        let hinh_tron_1 = new Hinh();
+        hinh_tron_1.setX(50);
+        hinh_tron_1.setY(200);
+        hinh_tron_1.setRadius(30);
+        hinh_tron_1.ve_HinhTron();
+
+        let move = new Start();
+        move.setHinh (hinh_tron_1);
+        move.moveHinh();
+
+        // let hinh_tron_2 = new Hinh();
+        // hinh_tron_2.setX(100);
+        // hinh_tron_2.setY(200);
+        // hinh_tron_2.setRadius(50);
+        // hinh_tron_2.ve_HinhTron();
+
+        // let hinh_vuong_1 = new Hinh();
+        // hinh_vuong_1.setX(20);
+        // hinh_vuong_1.setY(50);
+        // hinh_vuong_1.setWidth(60);
+        // hinh_vuong_1.setHeight(60)
+        // hinh_vuong_1.ve_HinhVuong();
+
+    </script>
+</body>
+</html>
